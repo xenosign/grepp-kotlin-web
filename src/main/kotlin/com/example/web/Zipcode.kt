@@ -42,7 +42,7 @@ class AddressSearchService {
     }
 
     private fun loadAddressData() {
-        val file = File("./zipcode.csv")
+        val file = File("./zipcode_seoul_utf8_type2.csv")
         BufferedReader(FileReader(file)).use { reader ->
             reader.lineSequence()
                 .map { line ->
