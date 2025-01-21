@@ -1,4 +1,4 @@
-package com.example.web
+package com.example.web.Ex
 
 fun main() {
     val lottoNumbers = generateLottoNumbers()

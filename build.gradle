@@ -33,6 +33,13 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+
+	// 코틀린 전용
+	implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.5.0")
+
+	// DB
+	implementation("org.mariadb.jdbc:mariadb-java-client:3.5.1")
+	implementation("mysql:mysql-connector-java:8.0.33")
 }
 
 kotlin {
