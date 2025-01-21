@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>글쓰기 결과</title>
+    <script th:inline="javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            const flag = [[${flag}]];  // CDATA와 주석 제거
+
+            if (flag === 1) {
+                alert('글쓰기 성공');
+                window.location.href = /*[[@{/mybatis/list}]]*/ '';
+            } else {
+                alert('글쓰기 실패');
+                history.back();
+            }
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>

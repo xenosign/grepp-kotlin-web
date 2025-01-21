@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zipcode Search</title>
+</head>
+<body>
+<div>
+  <h1>우편번호 검색</h1>
+
+  <!-- 검색 폼 -->
+  <form th:action="@{/zipcode/search}" method="get">
+    <input type="text"
+           name="dong"
+           placeholder="동을 입력하세요 (예: 대치동)"
+           th:value="${param.dong}">
+    <button type="submit">검색</button>
+  </form>
+
+  <!-- 검색 결과 표시 -->
+  <div th:if="${not #lists.isEmpty(zipcodes)}">
+    <h2>검색 결과</h2>
+    <table border="1">
+      <thead>
+      <tr>
+        <th>우편번호</th>
+        <th>시도</th>
+        <th>구군</th>
+        <th>동</th>
+        <th>건물명</th>
+        <th>번호</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="zip : ${zipcodes}">
+        <td th:text="${zip.zipcode}">135-549</td>
+        <td th:text="${zip.sido}">서울</td>
+        <td th:text="${zip.gugun}">강남구</td>
+        <td th:text="${zip.dong}">대치2동</td>
+        <td th:text="${zip.building}">코스모타워</td>
+        <td th:text="${zip.no}">166</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 검색 결과가 없을 때 메시지 -->
+  <div th:if="${zipcodes != null and #lists.isEmpty(zipcodes)}">
+    <p>검색 결과가 없습니다.</p>
+  </div>
+</div>
+</body>
+</html>

@@ -38,8 +38,19 @@ dependencies {
 	implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.5.0")
 
 	// DB
+	implementation("org.springframework.boot:spring-boot-starter-jdbc")
 	implementation("org.mariadb.jdbc:mariadb-java-client:3.5.1")
 	implementation("mysql:mysql-connector-java:8.0.33")
+
+	// DB 커넥션 풀
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+
+	// MyBatis 의존성 추가
+	implementation("org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3")
+	testImplementation("org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.3")
+
+	// JPA 관련 의존성 추가
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 }
 
 kotlin {

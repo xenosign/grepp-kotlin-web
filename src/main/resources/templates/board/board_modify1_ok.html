@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>글수정 결과</title>
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+        const flag = [[${flag}]];
+        const seq = [[${seq}]];
+
+        if (flag === 0) {
+            // 정상
+            alert('글수정 성공');
+            location.href = './view?seq=' + seq;
+        } else if (flag === 1) {
+            // 비밀번호 오류
+            alert('비밀번호 오류');
+            history.back();
+        } else {
+            // 비정상
+            alert('글수정 실패');
+            history.back();
+        }
+        /*]]>*/
+    </script>
+</head>
+<body>
+</body>
+</html>

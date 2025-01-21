@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+   <meta charset="UTF-8">
+   <title>글삭제 결과</title>
+   <script th:inline="javascript">
+       /*<![CDATA[*/
+       const flag = [[${flag}]];
+
+       if (flag === 0) {
+           // 정상
+           alert('글삭제 성공');
+           location.href = './list';
+       } else if (flag === 1) {
+           // 비밀번호 오류
+           alert('비밀번호 오류');
+           history.back();
+       } else {
+           // 비정상
+           alert('글삭제 실패');
+           history.back();
+       }
+       /*]]>*/
+   </script>
+</head>
+<body>
+</body>
+</html>
