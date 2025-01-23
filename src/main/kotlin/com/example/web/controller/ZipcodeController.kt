@@ -26,9 +26,4 @@ class ZipcodeController {
         }
         return "zipcode"
     }
-
-    @GetMapping("/dump")
-    fun dump() {
-        zipcodeService.loadCsvToDatabase("./zipcode2.csv");
-    }
 }
